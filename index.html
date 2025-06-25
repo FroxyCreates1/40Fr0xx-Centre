@@ -6,7 +6,6 @@
     <title>Team 40Fr0xx Hub</title>
     <link rel="icon" type="image/png" href="froxy.png"> <!-- Favicon -->
     <style>
-        /* 🔥 Image Background */
         body {
             background: url("backgroundforimage.png") repeat;
             background-size: contain;
@@ -16,55 +15,63 @@
             text-align: center;
         }
 
-        .button-container {
+        h1 {
+            margin-top: 30px;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        .icon-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
             margin-top: 50px;
         }
 
-        .button-container button {
-            background-color: #ff6600;
+        .icon-button {
+            text-decoration: none;
             color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+            font-size: 18px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .button-container button:hover {
-            background-color: #cc5500;
+        .icon-button img {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            border: 3px solid white;
+            object-fit: cover;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .icon-button:hover img {
             transform: scale(1.1);
-            box-shadow: 0px 0px 10px rgba(255, 102, 0, 0.6);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+        }
+
+        .icon-label {
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Team 40Fr0xx Hub - Welcome, Exploiters and Game Creators!</h1>
+    <h1>Welcome to FroxyWeb! 🎮🔥</h1>
 
-    <div class="button-container">
-        <button onclick="window.open('https://www.roblox.com/communities/35625250', '_blank')">Froxy Frox Clan! (Roblox group)</button>
-        <button onclick="window.open('https://sites.google.com/view/froxys-games/froxy-games-mobile?authuser=0', '_blank')">Froxy Games Mobile</button>
-        <button onclick="window.open('https://sites.google.com/view/froxys-games/google-drive-not-games?authuser=0', '_blank')">Google Drive - Not Games</button>
-        <button onclick="window.open('https://www.roblox.com/games/128611996461098/Forsaken-Modded#!/about', '_blank')">Forsaken: Modded (Roblox)</button>
-        <button onclick="window.open('https://sites.google.com/view/froxys-games/mcenters-download?authuser=0', '_blank')">MCenters Download</button>
-        <button onclick="window.open('https://sites.google.com/view/froxys-games/chatsites?authuser=0', '_blank')">ChatSites</button>
-        <button onclick="window.open('https://steamunlocked.net/', '_blank')">Steam Unlocked</button>
-        <button onclick="window.open('http://youtube.com/@sub2froxy', '_blank')">SubToFroxy - YouTube Channel</button>
-        <button onclick="window.open('https://steamunlocked.net/brick-rigs-free-download/', '_blank')">Brick Rigs Free Download</button>
-        <button onclick="window.open('https://steamunlocked.net/2-kindergarten-free-download/', '_blank')">Kindergarten Free Download</button>
-        <button onclick="window.open('https://steamunlocked.net/99-among-us-free-direct-download/', '_blank')">Among Us Free Download</button>
-        <button onclick="window.open('https://steamunlocked.net/?s=Call+of+duty', '_blank')">Call of Duty Free Download</button>
-        <button onclick="window.open('https://steamunlocked.net/?s=Slime+Rancher', '_blank')">Slime Rancher Free Download</button>
-        <button onclick="window.open('https://steamunlocked.net/1cf886-beamng-drive-free-v1-download/', '_blank')">BeamNG Drive Free Download</button>
-        <button onclick="window.open('https://steamunlocked.net/10-goat-simulator-3-free-download/', '_blank')">Goat Simulator 3 Free Download</button>
-        <button onclick="window.open('https://steamunlocked.net/3-goat-simulator-free-download/', '_blank')">Goat Simulator Free Download</button>
-        <button onclick="window.open('https://steamunlocked.net/5-just-die-already-free-download/', '_blank')">Just Die Already Free Download</button>
-        <button onclick="window.open('https://steamunlocked.net/e0cd93-people-playground-free-pc-download/', '_blank')">People Playground Free Download</button>
+    <div class="icon-container">
+        <a href="https://www.roblox.com/communities/35625250" target="_blank" class="icon-button">
+            <img src="40fr0xx.png" alt="Roblox Group">
+            <div class="icon-label">Froxy Frox Clan</div>
+        </a>
+        <a href="https://www.roblox.com/games/128611996461098/Forsaken-Modded#!/about" target="_blank" class="icon-button">
+            <img src="noli.png" alt="Forsaken Game">
+            <div class="icon-label">Forsaken: Modded</div>
+        </a>
+        <a href="http://youtube.com/@SubToFroxy" target="_blank" class="icon-button">
+            <img src="youtube.png" alt="YouTube">
+            <div class="icon-label">SubToFroxy</div>
+        </a>
     </div>
 
 </body>
