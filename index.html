@@ -53,26 +53,75 @@
         .icon-label {
             margin-top: 10px;
         }
+
+        /* Audio Player Styling */
+        .audio-upload {
+            margin-top: 60px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        audio {
+            margin-top: 20px;
+            width: 300px;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to FroxyWeb! 🎮🔥</h1>
+    <h1>Team 40Fr0xx Hub</h1>
 
     <div class="icon-container">
         <a href="https://www.roblox.com/communities/35625250" target="_blank" class="icon-button">
             <img src="FroxyFroxxClan.png" alt="Roblox Group">
             <div class="icon-label">Froxy Frox Clan</div>
         </a>
-        <a href="https://www.roblox.com/games/128611996461098/Forsaken-Modded#!/about" target="_blank" class="icon-button">
+        <a href="https://www.roblox.com/games/128611996461098/Forsaken-by-Froxy-Froxx-Clan" target="_blank" class="icon-button">
             <img src="noli.png" alt="Forsaken Game">
-            <div class="icon-label">Forsaken: Modded</div>
+            <div class="icon-label">Fr0xx-Saken™</div>
         </a>
         <a href="http://youtube.com/@sub2froxy" target="_blank" class="icon-button">
             <img src="youtube.png" alt="YouTube">
             <div class="icon-label">SubToFroxy</div>
+        </a> 
+        <a href="https://discord.gg/3sBnCJ5eBH" target="_blank" class="icon-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" alt="Discord Server">
+            <div class="icon-label">Join The Community Channel!</div>
         </a>
     </div>
+
+    <!-- 🎵 Audio Upload Section -->
+    <div class="audio-upload">
+        <h2>Upload & Play Your Audio</h2>
+        <input type="file" accept="audio/*" id="audioFile">
+        <br>
+        <audio id="audioPlayer" controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById("audioFile");
+        const audioPlayer = document.getElementById("audioPlayer");
+
+        fileInput.addEventListener("change", function () {
+            const file = this.files[0];
+            if (file) {
+                const objectURL = URL.createObjectURL(file);
+                audioPlayer.src = objectURL;
+                audioPlayer.play();
+            }
+        });
+    </script>
 
 </body>
 </html>
