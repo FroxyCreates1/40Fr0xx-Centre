@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="favicon.png" type="image/png" />
-
+    <link rel="icon" href="favicon.png" type="image/png" />
     <title>Team 40Fr0xx Hub</title>
 <!--
 Flat Template
@@ -52,7 +51,7 @@ http://www.templatemo.com/tm-491-flat
                                 <a class="nav-link" href="https://patreon.com/40fr0xxTeam" target="_blank" rel="noopener noreferrer">Patreon</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="https://www.youtube.com/watch?v=zLkMEDkEtrs&list=PLYPBxkzXXhiws0Q64cZy78GOxCGxQZWsr&pp=gAQB" target="_blank" rel="noopener noreferrer">Fr0xaken Devlogs</a>
+                                <a class="nav-link" href="https://www.youtube.com/watch?v=..." target="_blank" rel="noopener noreferrer">Fr0xaken Devlogs</a>
 
                             </li>
                             <li class="nav-item">
@@ -75,8 +74,8 @@ http://www.templatemo.com/tm-491-flat
                                     <i class="fa fa-4x fa-camera tm-icon"></i>
                                     <h2 class="tm-site-name">Fr0xaken</h2>
                                     <div class="tm-bg-white-translucent text-xs-left tm-textbox tm-textbox-1-col">
-                                        <p class="tm-text">Play Fr0xaken here <a rel="nofollow" href="https://www.roblox.com/games/128611996461098/Fr0xaken" target="_blank">On roblox</a> Be wary, its still a WIP, and our team is redoing every character (except the new ones, unless its bugged) Oh, and join the Roblox <a rel="nofollow" href="https://www.roblox.com/communities/35625250/Froxy-Frox-Clan" target="_blank">Community.</a> Join the collab <a rel="nofollow" href="https://www.roblox.com/communities/36017276/SPECIAL-Forsaken#!/about" target="_blank">Group too!</a>. Please follow my alt <a href="https://www.roblox.com/users/8659448472/profile" target="_blank">Here!</a> Thanks, and have fun!</p>
-                                        <p class="tm-text">Also join the groups! It shows the team graduitude, and we'll all thank you for your appreciation!</p>
+                                        <p class="tm-text">Play Fr0xaken here <a rel="nofollow" href="https://codyhouse.co/gem/hero-slider/" target="_blank">On roblox</a> Be wary, its still a WIP, and our team is redoing every character (except the new ones, unless its bugged) <a rel="nofollow" href="http://getbootstrap.com/" target="_blank">Bootstrap</a> 4 alpha 2. Images are taken from <a rel="nofollow" href="https://unsplash.com/" target="_blank">Unsplash</a>. This web template is provided by <a href="https://plus.google.com/+templatemo" target="_blank">templatemo</a> for free of charge.</p>
+                                        <p class="tm-text">Also join the group aswell, it shows the team graduitude, and we'll all thank you for your appreciation!</p>
                                     </div>
                                 </div>
 
@@ -278,60 +277,60 @@ http://www.templatemo.com/tm-491-flat
         <script src="js/jquery.magnific-popup.min.js"></script> <!-- Magnific popup (http://dimsemenov.com/plugins/magnific-popup/) -->
         
         <script>
-            function adjustHeightOfPage(pageNo) {
-                var totalPageHeight = 15 + $('.cd-slider-nav').height()
-                                        + $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .js-tm-page-content").height() + 160
-                                        + $('.tm-footer').height();
-        
-                if(totalPageHeight > $(window).height()) {
-                    $('.cd-hero-slider').addClass('small-screen');
-                    $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", totalPageHeight + "px");
-                }
-                else {
-                    $('.cd-hero-slider').removeClass('small-screen');
-                    $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", "100%");
+    function adjustHeightOfPage(pageNo) {
+        var totalPageHeight = 15 + $('.cd-slider-nav').height()
+                                + $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .js-tm-page-content").height() + 160
+                                + $('.tm-footer').height();
+
+        if(totalPageHeight > $(window).height()) {
+            $('.cd-hero-slider').addClass('small-screen');
+            $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", totalPageHeight + "px");
+        }
+        else {
+            $('.cd-hero-slider').removeClass('small-screen');
+            $('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", "100%");
+        }
+    }
+
+    $(window).load(function(){
+
+        adjustHeightOfPage(1); // Adjust page height
+
+        $('.tm-img-gallery').magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            gallery:{enabled:true}                
+        });
+
+        /* Updated click handler for nav links */
+        $('#tmNavbar a').click(function(e){
+            var href = $(this).attr("href");
+
+            // If external link, just let browser handle it immediately (no JS interference)
+            if (href.startsWith("http")) {
+                return; // Let browser navigate normally
+            }
+
+            // For internal links (anchors), prevent default and adjust slider
+            if (href.startsWith("#")) {
+                e.preventDefault();
+                $('#tmNavbar').collapse('hide');
+                var pageNo = $(this).data("no");
+                if (pageNo !== undefined) {
+                    adjustHeightOfPage(pageNo);
                 }
             }
-        
-            $(window).load(function(){
-        
-                adjustHeightOfPage(1); // Adjust page height
-        
-                $('.tm-img-gallery').magnificPopup({
-                    delegate: 'a',
-                    type: 'image',
-                    gallery:{enabled:true}                
-                });
-        
-                /* Updated click handler for nav links */
-                $('#tmNavbar a').click(function(e){
-                    var href = $(this).attr("href");
-        
-                    // If external link, just let browser handle it immediately (no JS interference)
-                    if (href.startsWith("http")) {
-                        return; // Let browser navigate normally
-                    }
-        
-                    // For internal links (anchors), prevent default and adjust slider
-                    if (href.startsWith("#")) {
-                        e.preventDefault();
-                        $('#tmNavbar').collapse('hide');
-                        var pageNo = $(this).data("no");
-                        if (pageNo !== undefined) {
-                            adjustHeightOfPage(pageNo);
-                        }
-                    }
-                });
-        
-                $( window ).resize(function() {
-                    var currentPageNo = $(".cd-hero-slider li.selected .js-tm-page-content").data("page-no");
-                    adjustHeightOfPage( currentPageNo );
-                });
-        
-                $('body').addClass('loaded');
-            });
-        </script>
-         
+        });
+
+        $( window ).resize(function() {
+            var currentPageNo = $(".cd-hero-slider li.selected .js-tm-page-content").data("page-no");
+            adjustHeightOfPage( currentPageNo );
+        });
+
+        $('body').addClass('loaded');
+    });
+</script>
+ 
 
 </body>
 </html>
