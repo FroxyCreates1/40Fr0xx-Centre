@@ -30,29 +30,34 @@
         }
     </style>
 </head>
-   <script>
-window.addEventListener('DOMContentLoaded', () => {
-    // List of all available music files (manually updated)
-    const musicFiles = [
-        'music/DOOMSPIRE.ogg',
-        'music/Damination.mp3',
-        'music/ReadyOrNot.mp3',
-        'music/Shattered.mp3'
-    ];
+  <button id="playMusicBtn">Play Music</button>
 
-    const randomTrack = musicFiles[Math.floor(Math.random() * musicFiles.length)];
+<script>
+  const musicFiles = [
+    'music/DOOMSPIRE.ogg',
+    'music/Damination.mp3',
+    'music/ReadyOrNot.mp3',
+    'music/Shattered.mp3'
+  ];
+  let audio;
 
-    const audio = new Audio(randomTrack);
-    audio.volume = 0.6;
-    audio.loop = true; // <- THIS is what makes it play forever
-    audio.play().catch(err => console.log("Autoplay failed:", err));
-});
+  document.getElementById('playMusicBtn').addEventListener('click', () => {
+    if (!audio) {
+      const randomTrack = musicFiles[Math.floor(Math.random() * musicFiles.length)];
+      audio = new Audio(randomTrack);
+      audio.loop = true;
+      audio.volume = 0.6;
+    }
+    audio.play().catch(e => console.log("Play failed:", e));
+  });
 </script>
+
 <body>
 
     <h1>Links</h1>
-
-    <!-- Replace the href values with your actual external URLs -->
+    
+    <button id="playMusicBtn">Play Music</button>  <!-- User click required -->
+    
     <a href="https://www.roblox.com/games/128611996461098/Fr0xaken" target="_self">Fr0xaken</a>
     <a href="https://youtube.com/@Sub2Froxy" target="_self">Youtube</a>
     <a href="https://www.roblox.com/communities/35625250/Froxy-Frox-Clan#!/about" target="_self">Group</a>
