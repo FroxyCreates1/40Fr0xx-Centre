@@ -315,12 +315,19 @@ http://www.templatemo.com/tm-491-flat
                 });
 
                 /* Collapse menu after click 
-                -----------------------------------------*/
-                $('#tmNavbar a').click(function(){
-                    $('#tmNavbar').collapse('hide');
+-----------------------------------------*/
+$('#tmNavbar a').click(function(e){
+    var href = $(this).attr("href");
 
-                    adjustHeightOfPage($(this).data("no")); // Adjust page height       
-                });
+    // Allow normal behavior for external links
+    if (href.startsWith("http")) return;
+
+    // Internal links: prevent default and handle slider
+    e.preventDefault();
+    $('#tmNavbar').collapse('hide');
+    adjustHeightOfPage($(this).data("no"));
+});
+
 
                 /* Browser resized 
                 -----------------------------------------*/
