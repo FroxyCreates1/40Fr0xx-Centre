@@ -30,24 +30,46 @@
         }
     </style>
 </head>
-  <button id="playMusicBtn">Play Music</button>
+<button id="playMusicBtn">Play Random Music</button>
 
 <script>
   const musicFiles = [
     'music/DOOMSPIRE.ogg',
     'music/Damination.mp3',
     'music/ReadyOrNot.mp3',
-    'music/Shattered.mp3'
+    'music/Shattered.mp3',
+    'music/Debt.mp3',
+    'music/Neck-Snappin-Tea-Sipper.mp3',
+    'music/VIP Jason.mp3',
+    'music/Vanity Jason LMS.mp3',
+    'music/Debito Di Sonno (Mafioso).mp3',
+    'music/DOMINO EFFECT 1X1X1X1 CHASE THEME (FORSAKEN).mp3',
+    'music/bluudanc.mp3',
+    'music/CUT-THROAT-TEAPARTY.mp3'
   ];
-  let audio;
+
+  let audio = null;
+
+  function getRandomTrack(exclude) {
+    let track;
+    do {
+      track = musicFiles[Math.floor(Math.random() * musicFiles.length)];
+    } while (track === exclude && musicFiles.length > 1); // Avoid same track
+    return track;
+  }
 
   document.getElementById('playMusicBtn').addEventListener('click', () => {
-    if (!audio) {
-      const randomTrack = musicFiles[Math.floor(Math.random() * musicFiles.length)];
-      audio = new Audio(randomTrack);
-      audio.loop = true;
-      audio.volume = 0.6;
+    // Stop current song
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
     }
+
+    // Pick a random song and play it
+    const randomTrack = getRandomTrack(audio?.src);
+    audio = new Audio(randomTrack);
+    audio.loop = true;
+    audio.volume = 0.6;
     audio.play().catch(e => console.log("Play failed:", e));
   });
 </script>
