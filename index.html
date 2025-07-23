@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>team 40Fr0xx Hub (WIP)</title>
+    <title>Main Hub</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #111;
+            background: url('background.png') no-repeat center center fixed;
+            background-size: cover;
             color: #fff;
             display: flex;
             flex-direction: column;
@@ -29,16 +30,33 @@
         }
     </style>
 </head>
+   <script>
+window.addEventListener('DOMContentLoaded', () => {
+    // List of all available music files (manually updated)
+    const musicFiles = [
+        'music/DOOMSPIRE.ogg',
+        'music/Damination.mp3',
+        'music/ReadyOrNot.mp3',
+        'music/Shattered.mp3'
+    ];
+
+    const randomTrack = musicFiles[Math.floor(Math.random() * musicFiles.length)];
+
+    const audio = new Audio(randomTrack);
+    audio.volume = 0.6;
+    audio.loop = true; // <- THIS is what makes it play forever
+    audio.play().catch(err => console.log("Autoplay failed:", err));
+});
+</script>
 <body>
 
     <h1>Links</h1>
 
-    <a href="https://www.roblox.com/communities/35625250" target="_self">Group Page</a>
-    <a href="https://www.roblox.com/games/128611996461098/Fr0xaken" target="_self">Game</a>
-    <a href="https://patreon.com/40fr0xxTeam" target="_self">Patreon</a>
-    <a href="https://www.youtube.com/watch?v=zLkMEDkEtrs&list=PLYPBxkzXXhiws0Q64cZy78GOxCGxQZWsr&pp=gAQB" target="_self">Fr0xaken Devlogs</a>
-    <a href="https://discord.gg/3sBnCJ5eBH" target="_self">Contact/Discord</a>
-    <a href="https://www.roblox.com/communities/36017276/SPECIAL-Forsaken#!/about" target="_self">[SPECIAL]Forsaken group</a>
+    <!-- Replace the href values with your actual external URLs -->
+    <a href="https://www.roblox.com/games/128611996461098/Fr0xaken" target="_self">Fr0xaken</a>
+    <a href="https://youtube.com/@Sub2Froxy" target="_self">Youtube</a>
+    <a href="https://www.roblox.com/communities/35625250/Froxy-Frox-Clan#!/about" target="_self">Group</a>
+    <a href="https://discord.gg/xTNkJgsT2Z" target="_self">Join Discord</a>
 
 </body>
 </html>
